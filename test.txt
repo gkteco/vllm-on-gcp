@@ -1,0 +1,21 @@
+{
+  "model": "meta-llama/Llama-3.2-1B-Instruct",
+  "messages": [
+    {
+        "role": "user",
+        "content": "What is the capital of France?"
+    }
+  ]
+}
+
+curl vllm-service.default.svc.cluster.local/v1/chat \
+    -H "Content-Type: application/json" \
+    -d '{
+   	 "model": "meta-llama/Llama-3.2-1B-Instruct",
+   	 "messages": [
+        {
+            "role": "user",
+            "content": "What is the capital of France?"
+        }
+    ]
+}'
